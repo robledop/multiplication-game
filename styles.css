@@ -1,0 +1,55 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+.grid {
+    width: 400px;
+    height: 400px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+.correct {
+    background-color: #00d26a;
+}
+
+.wrong {
+    background-color: #ed5050;
+}
+
+.grid-header {
+    background-color: #748ff0;
+    color: white;
+}
+
+.grid-body {
+    background-color: #f0f0f0;
+}
+
+#hint {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    color: #ff0000;
+}

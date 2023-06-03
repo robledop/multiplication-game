@@ -2,6 +2,7 @@ const gridElement = document.querySelector(".grid");
 const questionElement = document.getElementById("question");
 const inputElement = document.getElementById("input");
 const hintElement = document.getElementById("hint");
+const keyboardElement = document.getElementById("keyboard");
 
 let firstNumber;
 let secondNumber;
@@ -42,24 +43,44 @@ generateNewQuestion();
 inputElement.focus();
 inputElement.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-        hintElement.style.opacity = 0;
-        let answer = Number(inputElement.value);
-        const cell = document.querySelector(
-            `.cell[data-row="${firstNumber}"][data-col="${secondNumber}"]`
-        );
-        cell.classList.remove("wrong");
-        cell.classList.remove("grid-body");
-        if (answer === correctAnswer) {
-            cell.classList.add("correct");
-            cell.innerText = `✅`;
-        } else {
-            cell.classList.add("wrong");
-            cell.innerText = `💥`;
-            hintElement.innerText = `Wrong! ${firstNumber} x ${secondNumber} = ${correctAnswer}`;
-            hintElement.style.opacity = 1;
-        }
-        inputElement.value = "";
-        inputElement.focus();
-        generateNewQuestion();
+        checkAnswer();
     }
 });
+
+keyboardElement.addEventListener("click", function (event) {
+    let key = event.target.dataset.key;
+    switch (key) {
+        case "backspace":
+            inputElement.value = inputElement.value.slice(0, -1);
+            break;
+
+        case "enter":
+            checkAnswer();
+            break;
+        default:
+            inputElement.value += key;
+            break;
+    }
+});
+
+function checkAnswer() {
+    hintElement.style.opacity = 0;
+    let answer = Number(inputElement.value);
+    const cell = document.querySelector(
+        `.cell[data-row="${firstNumber}"][data-col="${secondNumber}"]`
+    );
+    cell.classList.remove("wrong");
+    cell.classList.remove("grid-body");
+    if (answer === correctAnswer) {
+        cell.classList.add("correct");
+        cell.innerText = `✅`;
+    } else {
+        cell.classList.add("wrong");
+        cell.innerText = `💥`;
+        hintElement.innerText = `Wrong! ${firstNumber} x ${secondNumber} = ${correctAnswer}`;
+        hintElement.style.opacity = 1;
+    }
+    inputElement.value = "";
+    inputElement.focus();
+    generateNewQuestion();
+}

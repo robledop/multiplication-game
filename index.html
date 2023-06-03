@@ -9,6 +9,7 @@
     <script defer type="module" src="script.js"></script>
     <title>Multiplication game</title>
 </head>
+
 <body>
     <header>
         <h1>Multiplication game</h1>
@@ -19,7 +20,30 @@
             <p id="question"></p>
             <input type="number" id="input" placeholder="Enter your answer">
             <p id="hint">zzzz</p>
+            <div id="keyboard">
+                <div class="keyboard-row">
+                    <div class="key key-number" data-key="7">7</div>
+                    <div class="key key-number" data-key="8">8</div>
+                    <div class="key key-number" data-key="9">9</div>
+                </div>
+                <div class="keyboard-row">
+                    <div class="key key-number" data-key="4">4</div>
+                    <div class="key key-number" data-key="5">5</div>
+                    <div class="key key-number" data-key="6">6</div>
+                </div>
+                <div class="keyboard-row">
+                    <div class="key key-number" data-key="1">1</div>
+                    <div class="key key-number" data-key="2">2</div>
+                    <div class="key key-number" data-key="3">3</div>
+                </div>
+                <div class="keyboard-row">
+                    <div class="key" data-key="backspace">⌫</div>
+                    <div class="key key-number" data-key="0">0</div>
+                    <div class="key" data-key="enter">✅</div>
+                </div>
+            </div>
         </div>
     </article>
 </body>
+
 </html>

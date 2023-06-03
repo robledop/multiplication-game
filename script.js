@@ -53,7 +53,6 @@ keyboardElement.addEventListener("click", function (event) {
         case "backspace":
             inputElement.value = inputElement.value.slice(0, -1);
             break;
-
         case "enter":
             checkAnswer();
             break;

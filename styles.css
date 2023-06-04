@@ -1,3 +1,9 @@
+:root{
+    --body-bg: #f0f0f0;
+    --body-color: #0f0f0f;
+    --primary: #748ff0;
+}
+
 h1 {
     text-align: center;
     font-size: 2.5rem;
@@ -20,11 +26,10 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 80vh;
 }
 .grid {
-    width: 800px;
-    height: 800px;
+    width: 45rem;
+    height: 45rem;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -34,9 +39,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--body-color);
     margin: 0;
     padding: 0;
 }
@@ -57,7 +62,7 @@ body {
 }
 
 .grid-header {
-    background-color: #748ff0;
+    background-color: var(--primary);
     color: white;
 }
 
@@ -77,8 +82,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 30 0px;
-    height: 80px;
+    width: 15rem;
     margin: 0;
     padding: 0;
 }
@@ -87,12 +91,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
-    border: 1px solid black;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--body-color);
     margin: 0;
     padding: 0;
-    color: black;
+    color: var(--body-color);
 }
 
 .key-number {
@@ -100,7 +104,7 @@ body {
 }
 
 .key:hover {
-    background-color: #748ff0;
+    background-color: var(--primary);
     cursor: pointer;
 }
 
